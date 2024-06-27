@@ -1,0 +1,50 @@
+Trabajo Integracion de plataforma evaluacion 2:`pABLO`
+
+Base de datos: Mysql
+Backend: Nodejs
+Frontend: html,css,js
+
+1- Descargar e Instalar "nodejs"
+2- Descargar e instalar "Mysql"
+3- al configurar mysql escrbir en MYSQL ROOT PASSWORD "pablo"
+4- verificar en las variables de sistema  en "path" que este la ubicacion de la carpeta bin de mysql recien instalado.
+5- Correr comando "mysql -u root -p" en cmd para poder entrar
+6- ingresar la clave "pablo"
+7- Crear base de datos sql con script de "basededatos.sql", aqui esta la base de datos, tablas y valores para insertar
+    Estos son los datos de configuracion de la base de datos en el backend app.js:
+    ""const db = mysql.createConnection({
+        host: 'localhost',
+        user: 'root',
+        password: 'pablo',
+        database: 'ferremas'
+    });""
+
+8- entrar en la carpeta del proyecto "microservicios" y ejecutar en terminal de vscode  node app.js
+   aqui el backend debera conectarse a la base de datos y deberia mostrar mensaje:
+   "Servidor corriendo en el puerto 8080
+    Conectado a la base de datos MySQL
+"
+9- abrir otra terminal y ejecutar comando "npm install -g http-server"
+10- abrir carpeta frontend y ejecutar "http-server"
+    este comando ejecutara el frontend y deberia mostrar mensaje:
+    "
+Available on:
+  http://192.168.43.195:8081
+  http://127.0.0.1:8081
+
+    "
+
+11- se mostrara la interfaz html en donde se deberian visualizar los objetos que estan en la base de datos,
+    junto con su valor en dolares
+
+12- al presionar el boton "generar transaccion" mandara al portal de pago "WEBPAY"
+    Datos de prueba: Redcompra	4051 8842 3993 7763
+
+    en esta direccion se encuentran mas tarjetas de prueba
+
+    https://www.transbankdevelopers.cl/documentacion/como_empezar#tarjetas-de-prueba
+
+    cuando pida rut podra utilizar el "111111111" y clave "123"
+
+    al mostrar transaccion aprobada abra un boton para volver a la pagina inicial 
+
